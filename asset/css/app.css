@@ -1,0 +1,1171 @@
+            * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazir', sans-serif;
+    overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+P {
+    color: white;
+}
+
+/* ========== navbar section ========== */
+.main {
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(248, 120, 9, 0.729);
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo-section {
+    width: 150px;
+    float: right;
+    height: 80px;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+
+.menu ul {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu ul li {
+    list-style: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    padding: 2px 5px;
+    color: black;
+}
+
+.menu ul li a:hover {
+    color: rgba(248, 120, 9, 0.729);
+}
+
+.btn {
+    display: flex;
+    gap: 20px;
+    justify-content: start;
+    float: left;
+    margin-right: 40px;
+}
+
+.btn .language {
+    width: 100px;
+    height: 35px;
+    border: 1.5px solid rgba(248, 120, 9, 0.729);
+    border-radius: 20px;
+    transition: 0.3s ease-in-out;
+    background: transparent;
+    cursor: pointer;
+}
+
+.btn a {
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'Vazir', sans-serif;
+    color: black;
+}
+
+.language:hover {
+    background: #2a329b;
+    background: linear-gradient(90deg, rgba(42, 50, 155, 1) 0%, rgba(237, 113, 24, 1) 93%);
+    cursor: pointer;
+}
+
+.btn a:hover {
+    color: white;
+}
+
+/* hamburger icon (hidden on desktop) */
+.menu-icon {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.menu-icon:hover {
+    background: rgba(248, 120, 9, 0.1);
+}
+
+/* ========== sidebar styles (mobile) ========== */
+.sidebar-close {
+    display: none; /* hidden on desktop */
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 35px;
+    height: 35px;
+    background: white;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.sidebar-close:hover {
+    background: rgba(248, 120, 9, 0.9);
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* overlay (dark background when sidebar is open) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ========== hero-section ========== */
+.gradient {
+    background: #614ef2;
+    background: linear-gradient(0deg, rgb(59, 34, 246) 0%, rgb(2, 75, 176) 100%);
+}
+
+.hero-container {
+    width: 85%;
+    height: inherit;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin: auto;
+    padding: 60px;
+    padding-top: 120px;
+}
+
+.hero-container .hero-text {
+    width: 50%;
+    padding-top: 90px;
+}
+
+.hero-container .hero-text h1 {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 3px;
+}
+
+.hero-container .hero-text h3 span {
+    font-weight: bold;
+    font-size: 35px;
+    color: white;
+}
+
+.hero-container .hero-text h3 {
+    color: white;
+}
+
+.hero-container .hero-text p {
+    font-size: 15px;
+}
+
+.hero-container .hero-text .download {
+    width: 180px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: white;
+    border: 1px solid rgba(248, 120, 9, 0.729);
+    float: left;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.hero-container .hero-text .download a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Vazir', sans-serif;
+    color: black;
+}
+
+.hero-container .hero-text .download:hover {
+    background: #2a329b;
+    background: linear-gradient(90deg, rgba(42, 50, 155, 1) 0%, rgba(237, 113, 24, 1) 93%);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.download:hover a:hover {
+    color: white;
+}
+
+.hero-container .hero-image {
+    width: 50%;
+    height: auto;
+    display: flex;
+    position: relative;
+}
+
+.hero-container .hero-image img {
+    width: 350px;
+    height: 220px;
+    margin-top: 130px;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+.hero-container .hero-image .img2 {
+    position: absolute;
+    bottom: 30%;
+    right: 35%;
+}
+
+.hero-container .hero-image .img2 img {
+    width: 350px;
+    height: 300px;
+}
+
+/* ========== services-section ========== */
+.services-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 80px;
+}
+
+.services-container h2 {
+    color: rgba(248, 120, 9, 0.729);
+    margin-bottom: 10px;
+}
+
+.services-container h3 {
+    text-shadow: 2px 2px 5px gray;
+}
+
+/* ========== services-card section ========== */
+.services-cards {
+    width: 70%;
+    height: auto;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.card {
+    width: 330px;
+    height: 200px;
+    padding: 20px;
+    background: linear-gradient(0deg, rgb(52, 31, 218) 0%, rgb(1, 86, 206) 100%);
+    border-radius: 8px;
+    padding-top: 25px;
+    transition: 1.2s ease;
+}
+
+.card i {
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    font-size: 22px;
+    border-radius: 5px;
+    border: 0px solid white;
+    color: orange;
+    backdrop-filter: blur(20px);
+    padding-top: 7px;
+    box-shadow: 0px 0px 20px 1px orange;
+}
+
+.card h3 {
+    color: white;
+    margin-top: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.card:hover {
+    box-shadow: 0 15px 10px rgba(35, 35, 35, 0.25);
+    transform: translateY(-2px);
+    cursor: pointer;
+    padding-bottom: 0px;
+}
+
+/* ========== gide-section ========== */
+.gide-container {
+    width: 100%;
+    height: auto;
+    background: #614ef2;
+    background: linear-gradient(0deg, rgb(59, 34, 246) 0%, rgb(2, 75, 176) 100%);
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.conts-gide {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 20px;
+}
+
+.conts-gide h2 {
+    color: white;
+}
+
+.conts-gide .first-cont {
+    width: 400px;
+    height: 130px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.third-cont {
+    display: flex;
+    flex-direction: column;
+}
+
+.second-cont {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* ========== price section ========== */
+.price-container {
+    width: 100%;
+    padding-top: 65px;
+    padding-bottom: 55px;
+}
+
+.price-container h3 {
+    color: black;
+}
+
+.cont {
+    width: 80%;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.cont i {
+    border-radius: 50%;
+    background-color: white;
+    padding: 10px;
+    font-size: 25px;
+    margin-left: 5px;
+}
+
+/* right-section */
+.cont .right-section {
+    width: 50%;
+}
+
+.child-right {
+    width: 100%;
+    max-width: 500px;
+    height: inherit;
+    background-color: rgb(222, 232, 252);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+.prices {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 5px;
+    padding-right: 40px;
+    padding-top: 30px;
+    border-radius: 20px;
+    background: #2a329b;
+    background: linear-gradient(0deg, rgb(59, 34, 246) 0%, rgb(2, 75, 176) 100%);
+}
+
+.prices i {
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.prices h2 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.prices h3 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.child-right i {
+    color: rgba(248, 120, 9, 0.729);
+    font-size: 18px;
+}
+
+.child-right p {
+    color: black;
+}
+
+/* left-section */
+.cont .left-section {
+    width: 50%;
+}
+
+/* ========== share section ========== */
+article {
+    width: 100%;
+    min-height: 720px;
+    margin: auto;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background-image: url(/asset/img/phone-share.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+article h2 {
+    color: orange;
+}
+
+article h3 {
+    color: rgba(255, 255, 255, 0.907);
+    text-shadow: 2px 2px 5px gray;
+}
+
+article .share-gift {
+    padding: 40px;
+    display: flex;
+    margin-top: 10px;
+    text-align: justify;
+    justify-content: center;
+}
+
+article .share-gift .text-share {
+    width: 60%;
+    max-width: 700px;
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 15px;
+    backdrop-filter: blur(4px);
+}
+
+article .share-gift .text-share h2 span {
+    color: orange;
+    font-size: 35px;
+}
+
+article .share-gift .text-share p {
+    color: white;
+}
+
+article .share-gift .text-share i {
+    font-size: 120px;
+    color: orange;
+    float: left;
+}
+
+article button {
+    border-radius: 8px;
+    padding: 7px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border: none;
+    background-color: orange;
+    color: white;
+    box-shadow: 0px 0px 15px 1px rgb(56, 56, 56);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+article button:hover {
+    transform: scale(1.05);
+}
+
+/* ========== FAQ section ========== */
+.FAQ-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+    direction: rtl;
+}
+
+.title-faq {
+    font-size: 2rem;
+    padding-top: 70px;
+    color: orange;
+}
+
+.faq {
+    width: 100%;
+    max-width: 700px;
+    margin-top: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid black;
+    cursor: pointer;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.question h3 {
+    font-size: 1rem;
+    color: black;
+}
+
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1.4s ease;
+}
+
+.answer p {
+    padding-top: 1rem;
+    line-height: 1.6;
+    color: black;
+}
+
+.answer ul {
+    padding-right: 20px;
+    color: black;
+}
+
+.answer ul li {
+    color: black;
+}
+
+.faq.active .answer {
+    animation: fade 1s ease-in-out;
+}
+
+.faq.active i {
+    transform: rotate(180deg);
+}
+
+i {
+    transition: transform .5s ease-in;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* ========== contact-us section ========== */
+.contact-us {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.contact-us h2 {
+    font-size: 30px;
+    color: orange;
+    margin-top: 30px;
+}
+
+.cart-container {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.cart {
+    width: 290px;
+    height: 200px;
+    background-color: rgb(236, 236, 236);
+    margin: 20px;
+    margin-top: 10px;
+    border-radius: 9px;
+    padding: 40px;
+}
+
+.cart .icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding-top: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart .icon i {
+    font-size: 30px;
+    margin: auto;
+}
+
+.cart h3 {
+    color: black;
+}
+
+.cart p {
+    color: rgb(101, 100, 100);
+    margin-top: 2px;
+}
+
+/* ========== footer section ========== */
+.footer {
+    border-top: 0.5px solid rgb(175, 175, 175);
+    background-color: rgb(236, 236, 236);
+    padding: 40px;
+    display: flex;
+    gap: 30px;
+    justify-content: space-evenly;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.footer img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 1px rgb(222, 222, 222);
+}
+
+.footer p {
+    color: black;
+    margin: 2px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+.footer a:hover {
+    color: rgba(248, 120, 9, 0.9);
+}
+
+.social-media-i {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-media-i i {
+    margin-left: 5px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+}
+
+.links h3,
+.social-media-i h3 {
+    margin-bottom: 10px;
+    color: black;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN — MEDIA QUERIES
+   ========================================= */
+
+/* ---------- Tablet & Small Laptops (max-width: 1024px) ---------- */
+@media (max-width: 1024px) {
+
+    /* hero */
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+        padding-top: 110px;
+    }
+
+    .hero-container .hero-text,
+    .hero-container .hero-image {
+        width: 100%;
+    }
+
+    .hero-container .hero-text {
+        padding-top: 20px;
+    }
+
+    .hero-container .hero-text .download {
+        float: none;
+        margin: 30px auto 0;
+    }
+
+    .hero-container .hero-image {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .hero-container .hero-image img {
+        margin-top: 20px;
+    }
+
+    .hero-container .hero-image .img2 {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 20px;
+    }
+
+    /* services */
+    .services-cards {
+        width: 90%;
+    }
+
+    .card {
+        width: 45%;
+    }
+
+    /* guide */
+    .conts-gide {
+        grid-template-columns: 1fr;
+    }
+
+    .conts-gide .first-cont {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    /* price */
+    .cont {
+        flex-direction: column;
+        gap: 30px;
+        width: 90%;
+    }
+
+    .cont .right-section,
+    .cont .left-section {
+        width: 100%;
+    }
+
+    /* share */
+    article {
+        min-height: auto;
+    }
+
+    article .share-gift .text-share {
+        width: 90%;
+        padding: 40px 25px;
+    }
+
+    article .share-gift .text-share i {
+        font-size: 80px;
+    }
+
+    /* footer */
+    .footer {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-info,
+    .links,
+    .social-media-i {
+        align-items: center;
+    }
+}
+
+/* ---------- Mobile Devices (max-width: 768px) ---------- */
+@media (max-width: 768px) {
+
+    /* ===== SIDEBAR TRANSFORMATION ===== */
+    /* show hamburger icon */
+    .menu-icon {
+        display: block;
+    }
+
+    /* show close button inside sidebar */
+    .sidebar-close {
+        display: flex;
+    }
+
+    /* transform .menu into a sliding sidebar */
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -320px; /* hidden off-screen (RTL: slides from right) */
+        width: 280px;
+        height: 100vh;
+        background: #ffffff;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+        z-index: 1100;
+        transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        overflow-y: auto;
+        padding-top: 70px;
+    }
+
+    /* when active, slide in */
+    .menu.active {
+        right: 0;
+    }
+
+    /* stack menu items vertically */
+    .menu ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 0;
+    }
+
+    .menu ul li {
+        width: 100%;
+        text-align: right;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .menu ul li a {
+        display: block;
+        padding: 15px 25px;
+        font-size: 16px;
+        border-right: 4px solid transparent;
+        transition: 0.3s;
+    }
+
+    .menu ul li a:hover {
+        background: rgba(248, 120, 9, 0.1);
+        color: rgba(248, 120, 9, 0.9);
+        border-right-color: rgba(248, 120, 9, 0.9);
+        padding-right: 30px;
+    }
+
+    /* hide desktop language button on mobile (it's inside sidebar now) */
+    .btn {
+        display: none;
+    }
+
+    /* navbar adjustments */
+    .navbar {
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+
+    .logo-section {
+        margin: 0;
+    }
+
+    /* hero */
+    .hero-container {
+        padding: 20px 15px;
+        padding-top: 100px;
+    }
+
+    .hero-container .hero-text h1 {
+        font-size: 24px;
+    }
+
+    .hero-container .hero-text h3 {
+        font-size: 18px;
+    }
+
+    .hero-container .hero-text h3 span {
+        font-size: 24px;
+    }
+
+    .hero-container .hero-text p {
+        font-size: 14px;
+    }
+
+    .hero-container .hero-image img,
+    .hero-container .hero-image .img2 img {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+    }
+
+    /* services */
+    .services-container {
+        padding-top: 50px;
+    }
+
+    .services-cards {
+        width: 95%;
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    /* guide */
+    .conts-gide {
+        padding: 20px 15px;
+        gap: 20px;
+    }
+
+    .conts-gide .first-cont {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .third-cont {
+        align-items: center;
+    }
+
+    /* price */
+    .price-container h2,
+    .price-container h3 {
+        padding: 0 15px;
+    }
+
+    .child-right {
+        padding: 10px;
+    }
+
+    .prices {
+        padding: 15px;
+    }
+
+    /* share */
+    article {
+        padding: 40px 15px;
+    }
+
+    article .share-gift {
+        padding: 20px 10px;
+    }
+
+    article .share-gift .text-share {
+        padding: 30px 15px;
+    }
+
+    article .share-gift .text-share i {
+        font-size: 60px;
+        float: none;
+        display: block;
+        margin: 20px auto;
+    }
+
+    article .share-gift .text-share h2 span {
+        font-size: 26px;
+    }
+
+    article button {
+        font-size: 16px;
+        padding: 8px 25px;
+    }
+
+    /* FAQ */
+    .FAQ-container {
+        width: 92%;
+    }
+
+    .title-faq {
+        font-size: 1.6rem;
+        padding-top: 50px;
+    }
+
+    .question h3 {
+        font-size: 0.95rem;
+    }
+
+    /* contact */
+    .cart-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart {
+        width: 90%;
+        max-width: 350px;
+        padding: 30px;
+    }
+
+    /* footer */
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 15px;
+        gap: 25px;
+    }
+
+    .footer-info,
+    .links,
+    .social-media-i {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* ---------- Small Mobile Devices (max-width: 480px) ---------- */
+@media (max-width: 480px) {
+
+    .sidebar {
+        width: 260px;
+    }
+
+    .hero-container .hero-text h1 {
+        font-size: 20px;
+    }
+
+    .hero-container .hero-text h3 {
+        font-size: 16px;
+    }
+
+    .hero-container .hero-text h3 span {
+        font-size: 20px;
+    }
+
+    .hero-container .hero-text .download {
+        width: 160px;
+        height: 45px;
+    }
+
+    .hero-container .hero-text .download a {
+        font-size: 16px;
+    }
+
+    .services-container h2 {
+        font-size: 18px;
+    }
+
+    .services-container h3 {
+        font-size: 15px;
+    }
+
+    .card h3 {
+        font-size: 17px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+
+    .conts-gide h2 {
+        font-size: 18px;
+    }
+
+    .price-container h2 {
+        font-size: 18px;
+    }
+
+    .price-container h3 {
+        font-size: 14px;
+    }
+
+    article h2 {
+        font-size: 18px;
+    }
+
+    article h3 {
+        font-size: 13px;
+    }
+
+    .title-faq {
+        font-size: 1.3rem;
+    }
+
+    .question h3 {
+        font-size: 0.85rem;
+    }
+
+    .contact-us h2 {
+        font-size: 22px;
+    }
+
+    .footer img {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+/* ---------- Extra Small Devices (max-width: 360px) ---------- */
+@media (max-width: 360px) {
+    .menu {
+        width: 100%;
+        right: -100%;
+    }
+
+    .hero-container .hero-text h1 {
+        font-size: 18px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .cart {
+        padding: 20px;
+    }
+}
